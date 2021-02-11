@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const figlet = require('figlet');
 
 //code from figlet module to display drawing
-figlet('EMPLOYEE MANAGER', function(err, data) {
+figlet('* EMPLOYEE * MANAGER *', function(err, data) {
   if (err) {
     console.log('Try again! Something wrong happened...');
     console.dir(err);
@@ -15,8 +15,8 @@ console.log(data)
 const connection = mysql.createConnection({
   host: "localhost",
 
-  // Your port; if not 8080
-  port: 8080,
+  // Your port; if not 3306
+  port: 3306,
 
   // Your username
   user: "root",
@@ -187,14 +187,14 @@ function addEmployee() {
   ])
     .then(function(answer) {
       //for loop to retun 
-      const chosenRole;
+      var chosenRole;
         for (var i = 0; i < resRole.length; i++) {
           if (resRole[i].title === answer.role_id) {
             chosenRole = resRole[i];
           }
         };
 
-        const chosenDept;
+        var chosenDept;
         for (var i = 0; i < resDept.length; i++) {
           if (resDept[i].name === answer.department_id) {
             chosenDept = resDept[i];
@@ -276,7 +276,7 @@ function addRole() {
 ])
 .then(function(answer) {
 
-  const chosenDept;
+  var chosenDept;
         for (var i = 0; i < resDept.length; i++) {
           if (resDept[i].name === answer.department_id) {
             chosenDept = resDept[i];
@@ -321,7 +321,7 @@ function removeEmployee() {
   ])
   .then(function(answer) {
 
-    const chosenEmp;
+    var chosenEmp;
         for (var i = 0; i < resEmp.length; i++) {
           if (resEmp[i].name === answer.employee_id) {
             chosenEmp = resEmp[i];
@@ -352,7 +352,7 @@ function updateEmployeeRole() {
         empChoice.push(empList);
     };
     
-    const roleChoice = [];
+    var roleChoice = [];
   connection.query("SELECT * FROM role", function(err, resRole) {
     if (err) throw err;
     for (var i = 0; i < resRole.length; i++) {
@@ -406,7 +406,7 @@ function updateEmployeeRole() {
 
 //Function to update employee manager
 function updateEmployeeMng() {
-  const empChoice = [];
+  var empChoice = [];
     connection.query("SELECT id, CONCAT(first_name, ' ', last_name) AS name FROM employees", function(err, resEmp) {
       if (err) throw err;
       for (var i = 0; i < resEmp.length; i++) {
@@ -431,13 +431,13 @@ function updateEmployeeMng() {
   ])
   .then(function(answer) {
 
-    const chosenEmp;
+    var chosenEmp;
         for (var i = 0; i < resEmp.length; i++) {
           if (resEmp[i].name === answer.employees) {
             chosenEmp = resEmp[i];
         }
       };
-      const chosenManager;
+      var chosenManager;
         for (var i = 0; i < resEmp.length; i++) {
           if (resEmp[i].name === answer.Managerid) {
             chosenManager = resEmp[i];
