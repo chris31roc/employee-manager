@@ -1,0 +1,26 @@
+{
+  "name": "employee-manager",
+  "version": "1.0.0",
+  "description": "An application that allows non-developers to view and interact with employee information within the database known as Content Management Systems.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris31roc/employee-manager.git"
+  },
+  "keywords": [
+    "employee-manager",
+    "node",
+    "mysql",
+    "inquirer"
+  ],
+  "author": "Christopher Hicks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris31roc/employee-manager/issues"
+  },
+  "homepage": "https://github.com/chris31roc/employee-manager#readme"
+}
