@@ -1,6 +1,6 @@
 # Employee Manager
 
-![Photo of Application]()
+![Photo of Application](./assets/employee-manager.png)
 
 
 # Link to video
